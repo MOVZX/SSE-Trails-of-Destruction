@@ -1,4 +1,4 @@
-Scriptname TrailsOfDestructionMCMScript extends SKI_ConfigBase  
+Scriptname TrailsOfDestructionMCMScript extends SKI_ConfigBase
 
 String[] TrailEffectOptions
 String[] PlayerEffectOptions
@@ -110,10 +110,8 @@ Event OnOptionSelect(int Option)
             SetToggleOptionValue(oTrailEffectsToggle, bTrailEffectsToggle)
         Endif
         If Option == oTrailEffectOverride
-        
             bTrailEffectOverride = !bTrailEffectOverride
             SetToggleOptionValue(oTrailEffectOverride, bTrailEffectOverride)
-            
         Endif
     Elseif CurrentPage == "Player Effects"
         If Option == oPlayerEffectsToggle
@@ -216,7 +214,7 @@ EndEvent
 Event OnOptionSliderAccept(int option, float value)
     If CurrentPage == "Player Effects"
         if option == oPlayerEffectLevel
-            TrailsofDestructionPlayerEffectLevel.SetValue(value) 
+            TrailsofDestructionPlayerEffectLevel.SetValue(value)
             SetSliderOptionValue(oPlayerEffectLevel, TrailsofDestructionPlayerEffectLevel.GetValue())
         Endif
     Endif
@@ -265,7 +263,7 @@ Spell Property FrostPlayerEffect Auto
 
 Spell Property ShockPlayerEffect Auto
 
-Actor Property PlayerRef Auto 
+Actor Property PlayerRef Auto
 
 GlobalVariable Property TrailsofDestructionOverride Auto
 GlobalVariable Property TrailsofDestructionDamageGlob Auto
