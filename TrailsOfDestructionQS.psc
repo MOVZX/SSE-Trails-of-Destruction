@@ -10,31 +10,13 @@ Spell Property ShockMoving Auto
 Spell Property ShockMovingNS Auto
 
 Spell Property FirePlayerEffect Auto
-
 Spell Property FrostPlayerEffect Auto
-
 Spell Property ShockPlayerEffect Auto
 
 Actor Property PlayerRef Auto
 
-
-
-
 Event OnInit()
-
-
-PlayerRef.AddSpell(ShockMoving, False)
-
-PlayerRef.AddSpell(ShockPlayerEffect, False)
-
-RegisterForSingleUpdate(0)
-
+    PlayerRef.AddSpell(ShockMoving, False)
+    PlayerRef.AddSpell(ShockPlayerEffect, False)
+    RegisterForSingleUpdate(0)
 endEvent
-
-
-
-
-
-
-
-

@@ -1,16 +1,11 @@
-Scriptname TrailsofDestructionFirePlayerScript extends activemagiceffect  
+Scriptname TrailsofDestructionFirePlayerScript extends activemagiceffect
 
-EffectShader Property ShadertoApply  Auto  
-
+EffectShader Property ShadertoApply Auto
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
-
-ShadertoApply.Play(akTarget)
-
+    ShadertoApply.Play(akTarget)
 EndEvent
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
-
-ShadertoApply.Stop(akTarget)
-
+    ShadertoApply.Stop(akTarget)
 EndEvent
