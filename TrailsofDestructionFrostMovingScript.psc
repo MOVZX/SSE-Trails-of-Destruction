@@ -21,10 +21,10 @@ EndEvent
 Event OnUpdate()
     If TrailsofDestructionOverride.GetValue() == 0.0
         If PlayerRef.GetBaseAV("Destruction") >= 75
-            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsInCombat())
+            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel3)
                 HazardScaled.SetScale(3)
-            Elseif PlayerRef.IsInCombat()
+            Elseif PlayerRef.IsWeaponDrawn()
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel3)
                 HazardScaled.SetScale(3)
@@ -35,10 +35,10 @@ Event OnUpdate()
                 MagnitudeSpell.SetNthEffectMagnitude(0, 0.0)
             Endif
         Elseif PlayerRef.GetBaseAV("Destruction") >= 50
-            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsInCombat())
+            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel2)
                 HazardScaled.SetScale(2)
-            Elseif PlayerRef.IsInCombat()
+            Elseif PlayerRef.IsWeaponDrawn()
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel2)
                 HazardScaled.SetScale(2)
@@ -49,9 +49,9 @@ Event OnUpdate()
                 MagnitudeSpell.SetNthEffectMagnitude(0, 0.0)
             Endif
         Elseif PlayerRef.GetBaseAV("Destruction") >= 25
-            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsInCombat())
+            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel1)
-            Elseif PlayerRef.IsInCombat()
+            Elseif PlayerRef.IsWeaponDrawn()
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel1)
             Endif
@@ -63,9 +63,9 @@ Event OnUpdate()
         Endif
     Else
         If TrailsofDestructionOverride.GetValue() == 1.0
-            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsInCombat())
+            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
                 PlayerRef.PlaceAtMe(HazardLevel1)
-            Elseif PlayerRef.IsInCombat()
+            Elseif PlayerRef.IsWeaponDrawn()
                 Utility.Wait(2)
                 PlayerRef.PlaceAtMe(HazardLevel1)
             Endif
@@ -75,10 +75,10 @@ Event OnUpdate()
                 MagnitudeSpell.SetNthEffectMagnitude(0, 0.0)
             Endif
         Elseif TrailsofDestructionOverride.GetValue() == 2.0
-            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsInCombat())
+            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel2)
                 HazardScaled.SetScale(2)
-            Elseif PlayerRef.IsInCombat()
+            Elseif PlayerRef.IsWeaponDrawn()
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel2)
                 HazardScaled.SetScale(2)
@@ -89,10 +89,10 @@ Event OnUpdate()
                 MagnitudeSpell.SetNthEffectMagnitude(0, 0.0)
             Endif
         Elseif TrailsofDestructionOverride.GetValue() == 3.0
-            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsInCombat())
+            If ((Game.getPlayer().IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel3)
                 HazardScaled.SetScale(3)
-            Elseif PlayerRef.IsInCombat()
+            Elseif PlayerRef.IsWeaponDrawn()
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel3)
                 HazardScaled.SetScale(3)
