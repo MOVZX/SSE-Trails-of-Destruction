@@ -21,9 +21,9 @@ EndEvent
 Event OnUpdate()
     If TrailsofDestructionOverride.GetValue() == 0.0
         If PlayerRef.GetBaseAV("Destruction") >= 75
-            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
+            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 PlayerRef.PlaceAtMe(HazardLevel3)
-            Elseif PlayerRef.IsWeaponDrawn()
+            Elseif (PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 Utility.Wait(2)
                 PlayerRef.PlaceAtMe(HazardLevel3)
             Endif
@@ -33,10 +33,10 @@ Event OnUpdate()
                 MagnitudeSpell.SetNthEffectMagnitude(0, 0.0)
             Endif
         Elseif PlayerRef.GetBaseAV("Destruction") >= 50
-            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
+            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel2)
                 HazardScaled.SetScale(0.66)
-            Elseif PlayerRef.IsWeaponDrawn()
+            Elseif (PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel2)
                 HazardScaled.SetScale(0.66)
@@ -47,10 +47,10 @@ Event OnUpdate()
                 MagnitudeSpell.SetNthEffectMagnitude(0, 0.0)
             Endif
         Elseif PlayerRef.GetBaseAV("Destruction") >= 25
-            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
+            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel1)
                 HazardScaled.SetScale(0.33)
-            Elseif PlayerRef.IsWeaponDrawn()
+            Elseif (PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel1)
                 HazardScaled.SetScale(0.33)
@@ -63,10 +63,10 @@ Event OnUpdate()
         Endif
     Else
         If TrailsofDestructionOverride.GetValue() == 1.0
-            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
+            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel1)
                 HazardScaled.SetScale(0.33)
-            Elseif PlayerRef.IsWeaponDrawn()
+            Elseif (PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel1)
                 HazardScaled.SetScale(0.33)
@@ -77,10 +77,10 @@ Event OnUpdate()
                 MagnitudeSpell.SetNthEffectMagnitude(0, 0.0)
             Endif
         Elseif TrailsofDestructionOverride.GetValue() == 2.0
-            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
+            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel2)
                 HazardScaled.SetScale(0.66)
-            Elseif PlayerRef.IsWeaponDrawn()
+            Elseif (PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 Utility.Wait(2)
                 HazardScaled = PlayerRef.PlaceAtMe(HazardLevel2)
                 HazardScaled.SetScale(0.66)
@@ -91,9 +91,9 @@ Event OnUpdate()
                 MagnitudeSpell.SetNthEffectMagnitude(0, 0.0)
             Endif
         Elseif TrailsofDestructionOverride.GetValue() == 3.0
-            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn())
+            If ((PlayerRef.IsRunning() || PlayerRef.IsSprinting()) && PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 PlayerRef.PlaceAtMe(HazardLevel3)
-            Elseif PlayerRef.IsWeaponDrawn()
+            Elseif (PlayerRef.IsWeaponDrawn() && !PlayerRef.isSneaking())
                 Utility.Wait(2)
                 PlayerRef.PlaceAtMe(HazardLevel3)
             Endif
